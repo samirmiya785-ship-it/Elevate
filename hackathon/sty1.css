@@ -1,0 +1,28 @@
+.body{
+    background: rgb(231, 225, 225);
+    font-family:Arial;
+    overflow-x:auto;
+    
+}
+.h2{
+   font-size: 46px;
+}
+.profile{
+    text-align:center;
+    margin:30px;
+    font-size:30px;
+}
+
+.box{
+    background: rgb(229, 223, 223);
+    padding:20px;
+   margin: 10px;
+    border-radius:10px;
+    font-size:25px;
+    svg{
+    margin-top: 5px;
+    width:4rem;
+    height: 4rem;
+}
+}
+
