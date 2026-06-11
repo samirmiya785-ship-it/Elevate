@@ -1,0 +1,132 @@
+:root {
+  font-family: Arial, sans-serif;
+  background: #f7f8fc;
+  color: #1f2937;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-bar {
+  background: #1f2937;
+  color: #ffffff;
+  padding: 18px 24px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding-top: 3px 
+  padding-bottom:  3px;
+}
+
+.page-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 28px rgba(15, 23, 42, 0.08);
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 2fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.topic-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.topic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 20px rgba(15, 23, 42, 0.12);
+  background: #445e09;
+}
+
+.topic-button.full {
+  grid-column: 1 / -1;
+  grid-row: span 2;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  position: sticky;
+  bottom: 0;
+}
+
+.nav-button {
+  flex: 1;
+  margin: 0 6px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  border: none;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+.nav-button.active {
+  background: #312e81;
+  color: #ffffff;
+}
+
+.nav-button:first-child {
+  margin-left: 0;
+}
+
+.nav-button:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-button {
+    flex: 1 1 45%;
+  }
+}
