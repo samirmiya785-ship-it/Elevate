@@ -43,7 +43,34 @@
         <div class="bottom-buttons-row">
           <a href="#" class="btn sub-btn">⚖️ Laws</a>
           <a href="#" class="btn sub-btn">🔍 Myths & Facts</a>
-          <a href="#" class="btn sub-btn accent-btn">📞 Helpline Numbers</a>
+          <a  class="btn sub-btn" onclick="toggleHelpline()" onmouseenter="showHelpline()" onmouseleave="hideHelpline()">📞 Helpline</a>
+
+            <div id="helpline-info">
+              <strong>Helpline Information</strong>
+              <p>Nepal Police: 100</p>
+              <p>Nepal Women Helpline: 1145</p>
+              <p>CIAA: 107</p>
+              <script>
+                const infoBox = document.getElementById("helpline-info");
+                let isLocked = false;
+
+                function showHelpline() {
+                  infoBox.style.display = "block";
+                }
+
+                function hideHelpline() {
+                  if (!isLocked) {
+                    infoBox.style.display = "none";
+                  }
+                }
+
+                function toggleHelpline() {
+                  isLocked = !isLocked; // Toggle the lock state
+                  infoBox.style.display = "block";
+                }
+              </script>
+            </div>
+          </div>
         </div>
       </div>
 
