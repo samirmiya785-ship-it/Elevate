@@ -1,35 +1,241 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elevate - Counselling</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo">
-        <div class="logo-icon">E</div>
-        <h2>Elevate</h2>
-      </div>
-      <ul class="nav-links">
-        <li><a href="page.html">Home</a></li>
-        <li><a href="counselling.html" class="active">Counselling</a></li>
-        <li><a href="page.html#classes">Classes</a></li>
-        <li><a href="profile.html">Profile</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="page.html" class="btn primary-btn">Back Home</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevate — Counselling</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <main class="hero profile-hero">
-      <div class="hero-content">
-        <div class="badge"><span class="dot"></span> Counselling</div>
-        <h1>Counselling is ready to build.</h1>
-        <p>This page is intentionally clear so you can add your counsellor contacts, scheduling, and support resources later.</p>
-        <a href="page.html" class="btn outline-btn large-btn">Return to Home</a>
+<nav class="navbar" id="navbar">
+  <a class="logo" href="page.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <circle cx="50" cy="50" r="48" fill="url(#lg2)"/>
+        <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+        <defs>
+          <linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4785"/>
+            <stop offset="100%" style="stop-color:#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="logo-text"><h2>Elevate</h2><p class="tagline">Close the Gaps</p></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="page.html">Home</a></li>
+    <li><a href="counselling.html" class="active">Counselling</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="article.html">Articles</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#book" class="btn primary-btn">Book a Session</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main class="counselling-hero">
+  <div class="hero-content reveal">
+    <div class="badge"><span class="dot"></span> Verified Support</div>
+    <h1>
+      You deserve to be <br/>
+      <span class="gradient-text">heard & helped.</span>
+    </h1>
+    <p class="hero-sub">Connect with trained counsellors who understand gender-based challenges in Nepal. Everything you share stays confidential. Your courage to reach out is the first step.</p>
+    <div class="cta-group">
+      <a href="#counsellors" class="btn primary-btn large-btn">Meet Our Counsellors</a>
+      <a href="#book" class="btn outline-btn large-btn">Book a Session</a>
+    </div>
+  </div>
+</main>
+
+<!-- COUNSELLORS -->
+<section class="counsellors-section" id="counsellors">
+  <div class="section-inner">
+    <span class="section-label reveal">Our Team</span>
+    <h2 class="section-title reveal">Meet Your Support Team</h2>
+    <p class="section-subtitle reveal">All counsellors are trained professionals who speak Nepali and English, with deep understanding of Nepal's socio-cultural context.</p>
+
+    <div class="counsellors-grid stagger">
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">👩</div>
+        <h4>Priya Sharma</h4>
+        <div class="counsellor-role">Gender &amp; Trauma Specialist</div>
+        <p class="counsellor-bio">8 years experience supporting survivors of domestic violence and gender-based discrimination in Kathmandu Valley.</p>
+        <div class="availability-badge">Available Now</div>
+        <a href="#book" class="btn primary-btn full-width small-btn">Book Session</a>
       </div>
-    </main>
-  </body>
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">🧑</div>
+        <h4>Rajan Thapa</h4>
+        <div class="counsellor-role">Mental Health &amp; Empowerment Coach</div>
+        <p class="counsellor-bio">Specialized in helping young people build confidence and navigate workplace discrimination and family pressure.</p>
+        <div class="availability-badge">Available Now</div>
+        <a href="#book" class="btn primary-btn full-width small-btn">Book Session</a>
+      </div>
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">👩‍⚕️</div>
+        <h4>Sunita Gurung</h4>
+        <div class="counsellor-role">Child &amp; Youth Counsellor</div>
+        <p class="counsellor-bio">Works with survivors of early marriage and adolescent girls facing educational barriers across rural Nepal.</p>
+        <div class="availability-badge">Available Now</div>
+        <a href="#book" class="btn primary-btn full-width small-btn">Book Session</a>
+      </div>
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">🧓</div>
+        <h4>Dr. Mohan Karki</h4>
+        <div class="counsellor-role">Clinical Psychologist</div>
+        <p class="counsellor-bio">15 years of experience in trauma recovery and community mental health, with research on gender inequality in Terai communities.</p>
+        <div class="availability-badge" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.22);color:var(--gold);">Next Available: Tomorrow</div>
+        <a href="#book" class="btn outline-btn full-width small-btn">Book Session</a>
+      </div>
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">👩‍🎓</div>
+        <h4>Asha Pradhan</h4>
+        <div class="counsellor-role">Legal &amp; Rights Counsellor</div>
+        <p class="counsellor-bio">Helps individuals understand their rights under Nepal's constitution and connects them with legal aid for gender-based cases.</p>
+        <div class="availability-badge">Available Now</div>
+        <a href="#book" class="btn primary-btn full-width small-btn">Book Session</a>
+      </div>
+
+      <div class="counsellor-card">
+        <div class="counsellor-avatar">🧑‍💼</div>
+        <h4>Bikash Limbu</h4>
+        <div class="counsellor-role">Community &amp; Family Mediator</div>
+        <p class="counsellor-bio">Specializes in family mediation and community-level gender dialogue programs in Hilly and Mountain regions of Nepal.</p>
+        <div class="availability-badge">Available Now</div>
+        <a href="#book" class="btn primary-btn full-width small-btn">Book Session</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="book-section" id="book">
+  <div class="book-form-wrap reveal">
+    <h2>Book a <span class="gradient-text">Free Session</span></h2>
+    <p class="sub">All sessions are free, confidential, and available in Nepali and English.</p>
+
+    <form id="bookForm" onsubmit="submitBook(event)">
+      <div class="form-group">
+        <label for="bname">Your Name</label>
+        <input type="text" id="bname" placeholder="Enter your name" required/>
+      </div>
+      <div class="form-group">
+        <label for="bphone">Phone / Contact</label>
+        <input type="tel" id="bphone" placeholder="Your phone number or email"/>
+      </div>
+      <div class="form-group">
+        <label for="bcounsellor">Choose Counsellor</label>
+        <select id="bcounsellor" required>
+          <option value="">— Select a counsellor —</option>
+          <option>Priya Sharma — Gender &amp; Trauma Specialist</option>
+          <option>Rajan Thapa — Mental Health &amp; Empowerment</option>
+          <option>Sunita Gurung — Child &amp; Youth Counsellor</option>
+          <option>Dr. Mohan Karki — Clinical Psychologist</option>
+          <option>Asha Pradhan — Legal &amp; Rights Counsellor</option>
+          <option>Bikash Limbu — Community Mediator</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="btype">Session Type</label>
+        <select id="btype">
+          <option>Online (Video Call)</option>
+          <option>Phone Call</option>
+          <option>Anonymous Chat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="bmessage">Brief message (optional)</label>
+        <textarea id="bmessage" rows="4" placeholder="Share what you'd like to discuss — this is completely confidential."></textarea>
+      </div>
+      <button type="submit" class="btn primary-btn full-width large-btn">Request Session</button>
+    </form>
+
+    <div id="bookSuccess" style="display:none;text-align:center;padding:30px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">💙</div>
+      <h3 style="font-size:1.4rem;margin-bottom:8px;">Request Received!</h3>
+      <p style="color:var(--text2);">A counsellor will reach out to you within 24 hours. You are brave for taking this step.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="page.html">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+              <circle cx="50" cy="50" r="48" fill="url(#lgfc)"/>
+              <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+              <defs>
+                <linearGradient id="lgfc" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ff4785"/>
+                  <stop offset="100%" style="stop-color:#7c3aed"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text"><h2>Elevate</h2></div>
+        </a>
+        <p>Closing gender gaps in Nepal through education, counselling, and community.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="page.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="article.html">Articles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="page.html#helplines">Helplines</a></li>
+          <li><a href="page.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Emergency</h5>
+        <ul>
+          <li><a href="#">Police: 100</a></li>
+          <li><a href="#">Women: 1145</a></li>
+          <li><a href="#">Mental Health: 1166</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Elevate Nepal.</span>
+      <span>All counselling services are free and confidential.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+  function submitBook(e) {
+    e.preventDefault();
+    document.getElementById('bookForm').style.display = 'none';
+    document.getElementById('bookSuccess').style.display = 'block';
+  }
+</script>
+</body>
 </html>

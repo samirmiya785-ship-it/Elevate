@@ -1,131 +1,292 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Article Creator & Dashboard</title>
-    <link rel="stylesheet" href="article.css" />
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <div class="logo-icon">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-            <!-- Background circle -->
-            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)" />
-            <!-- Arrow pointing up (growth symbol) -->
-            <path d="M 50 25 L 65 45 L 57 45 L 57 65 L 43 65 L 43 45 L 35 45 Z" fill="white" />
-            <!-- Decorative circles -->
-            <circle cx="25" cy="70" r="4" fill="rgba(255,255,255,0.7)" />
-            <circle cx="75" cy="70" r="4" fill="rgba(255,255,255,0.7)" />
-            <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color: #e27b6e; stop-opacity: 1" />
-                <stop offset="100%" style="stop-color: #a074a8; stop-opacity: 1" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <h2>Elevate</h2>
-          <p class="tagline">Close the Gaps</p>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevate — Articles</title>
+  <link rel="stylesheet" href="article.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a class="logo" href="page.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <circle cx="50" cy="50" r="48" fill="url(#lga)"/>
+        <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+        <defs>
+          <linearGradient id="lga" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4785"/>
+            <stop offset="100%" style="stop-color:#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <h2>Elevate</h2>
+      <p class="tagline">Close the Gaps</p>
+    </div>
+  </a>
+  <div style="display:flex;align-items:center;gap:24px;">
+    <nav style="display:flex;gap:4px;">
+      <a href="page.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Home</a>
+      <a href="counselling.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Counselling</a>
+      <a href="classes.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Classes</a>
+      <a href="profile.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Profile</a>
+    </nav>
+  </div>
+</nav>
+
+<main class="dashboard-container">
+
+  <!-- LEFT: Create Form -->
+  <section class="form-section">
+    <h2>Share Your Story</h2>
+    <p class="sub">Your experience can change someone's life. Write anonymously or under your name — every voice matters.</p>
+
+    <form id="articleForm" onsubmit="publishArticle(event)">
+
+      <div class="form-group">
+        <label for="title">Article Title</label>
+        <input type="text" id="title" placeholder="Give your story a title..." required/>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <div class="tag-row" id="tagRow">
+          <button type="button" class="tag-btn" data-tag="personal">Personal Story</button>
+          <button type="button" class="tag-btn selected" data-tag="awareness">Awareness</button>
+          <button type="button" class="tag-btn" data-tag="rights">Rights &amp; Laws</button>
+          <button type="button" class="tag-btn" data-tag="story">Community</button>
         </div>
       </div>
-    </header>
 
-    <main class="dashboard-container">
-      <section class="form-section">
-        <h2>Create a New Article</h2>
-        <form id="articleForm">
-          <div class="form-group">
-            <label for="title">Article Title</label>
-            <input type="text" id="title" placeholder="Enter a catchy title..." required />
-          </div>
+      <div class="form-group">
+        <label for="content">Your Message</label>
+        <textarea id="content" rows="7" placeholder="Write your story, experience, or insight here... (Nepali or English)" required></textarea>
+      </div>
 
-          <div class="form-group">
-            <label for="content">Article Content</label>
-            <textarea id="content" rows="8" placeholder="Write your story here..." required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="file-label">Upload Photos</label>
-            <input type="file" id="photos" accept="image/*" multiple />
-          </div>
-
-          <div class="form-group">
-            <label class="file-label">Upload Videos</label>
-            <input type="file" id="videos" accept="video/*" multiple />
-          </div>
-
-          <button type="submit" class="submit-btn">Publish Article</button>
-        </form>
-      </section>
-
-      <section class="feed-section">
-        <h2>Published Articles</h2>
-        <div id="articlesDisplay" class="articles-grid">
-          <p class="no-articles">No articles published yet. Use the form to create one!</p>
+      <div class="form-group">
+        <label>Add Photos (optional)</label>
+        <div class="file-upload-box">
+          <input type="file" id="photos" accept="image/*" multiple/>
+          <div class="upload-icon">🖼️</div>
+          <p>Drag &amp; drop or click to upload</p>
+          <span>JPG, PNG, WEBP supported</span>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <script>
-      document.getElementById("articleForm").addEventListener("submit", function (e) {
-        e.preventDefault();
+      <div class="form-group">
+        <label>Add Video (optional)</label>
+        <div class="file-upload-box">
+          <input type="file" id="videos" accept="video/*" multiple/>
+          <div class="upload-icon">🎥</div>
+          <p>Drag &amp; drop or click to upload</p>
+          <span>MP4, MOV supported</span>
+        </div>
+      </div>
 
-        const title = document.getElementById("title").value;
-        const content = document.getElementById("content").value;
-        const photoFiles = document.getElementById("photos").files;
-        const videoFiles = document.getElementById("videos").files;
+      <div class="form-group">
+        <label for="author">Your Name</label>
+        <input type="text" id="author" placeholder="Anonymous" />
+      </div>
 
-        // Remove the "No articles published yet" text on first submission
-        const fallbackMsg = document.querySelector(".no-articles");
-        if (fallbackMsg) fallbackMsg.remove();
+      <button type="submit" class="submit-btn">Publish Article ✦</button>
+    </form>
+  </section>
 
-        // Create article card element
-        const card = document.createElement("article");
-        card.className = "article-card";
+  <!-- RIGHT: Feed -->
+  <section class="feed-section">
+    <h2>Community Articles</h2>
+    <p class="feed-meta" id="feedMeta">Voices from the Elevate community in Nepal.</p>
 
-        // Add Text Elements
-        let mediaHTML = "";
+    <div id="articlesDisplay" class="articles-grid">
 
-        // Handle Photo Previews
-        if (photoFiles.length > 0) {
-          mediaHTML += '<div class="media-gallery">';
-          for (let i = 0; i < photoFiles.length; i++) {
-            const imgUrl = URL.createObjectURL(photoFiles[i]);
-            mediaHTML += `<img src="${imgUrl}" alt="Article Image">`;
-          }
-          mediaHTML += "</div>";
-        }
+      <!-- Seeded articles -->
+      <article class="article-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>How learning about my legal rights changed everything</h3>
+            <span class="card-tag rights">Rights</span>
+          </div>
+          <p class="publish-date">June 10, 2025</p>
+          <p class="body-text-preview">I grew up in Sindhupalchok, where nobody talked about women's rights. When I was 16, my family arranged my marriage. I didn't know I had the right to say no, that Nepal's law sets the minimum age at 20. When a volunteer from Elevate visited our village and told me about the legal protections I had, it changed my entire life. I refused the marriage. My family was angry for months. But today I am in grade 12 and planning to study law...</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">R</div>
+            <span class="author-name">Resham K. — Sindhupalchok</span>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn" onclick="likePost(this)">♥ 47</button>
+            <button class="action-btn">💬 12</button>
+          </div>
+        </div>
+      </article>
 
-        // Handle Video Previews
-        if (videoFiles.length > 0) {
-          mediaHTML += '<div class="media-gallery">';
-          for (let i = 0; i < videoFiles.length; i++) {
-            const videoUrl = URL.createObjectURL(videoFiles[i]);
-            mediaHTML += `<video src="${videoUrl}" controls></video>`;
-          }
-          mediaHTML += "</div>";
-        }
+      <article class="article-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>Breaking the silence around Chhaupadi in our community</h3>
+            <span class="card-tag awareness">Awareness</span>
+          </div>
+          <p class="publish-date">June 7, 2025</p>
+          <p class="body-text-preview">In our village in Achham, Chhaupadi was never questioned — it was simply what we did. Girls would stay in cold sheds during menstruation. Two girls in nearby villages died from snake bites in those sheds. After attending an Elevate awareness session, five of us young women decided to start talking openly about this. We spoke to the elders, shared the medical facts. It took six months but our village officially ended the practice last month...</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">S</div>
+            <span class="author-name">Sita T. — Achham</span>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn" onclick="likePost(this)">♥ 93</button>
+            <button class="action-btn">💬 28</button>
+          </div>
+        </div>
+      </article>
 
-        // Inject structural content into card
-        card.innerHTML = `
-                <div class="card-content">
-                    <h3>${title}</h3>
-                    <p class="publish-date">Published Just Now</p>
-                    <p class="body-text">${content.replace(/\n/g, "<br>")}</p>
-                </div>
-                ${mediaHTML}
-            `;
+      <article class="article-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>My husband and I took the Self-Empowerment course together</h3>
+            <span class="card-tag personal">Personal</span>
+          </div>
+          <p class="publish-date">June 3, 2025</p>
+          <p class="body-text-preview">My husband suggested we take the Self-Empowerment course together. I was surprised — most men in our neighborhood think gender equality is a "women's issue." What we learned changed how we communicate, how we share responsibilities, and how we raise our daughter. Gender equality isn't a fight between men and women. It's something we build together...</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">A</div>
+            <span class="author-name">Anita M. — Pokhara</span>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn" onclick="likePost(this)">♥ 61</button>
+            <button class="action-btn">💬 19</button>
+          </div>
+        </div>
+      </article>
 
-        // Prepend new card to the top of the feed grid
-        const displayArea = document.getElementById("articlesDisplay");
-        displayArea.insertBefore(card, displayArea.firstChild);
+      <article class="article-card">
+        <div class="card-content">
+          <div class="card-header">
+            <h3>5 myths about gender equality in Nepal — debunked</h3>
+            <span class="card-tag awareness">Awareness</span>
+          </div>
+          <p class="publish-date">May 28, 2025</p>
+          <p class="body-text-preview">Myth 1: "This is just a Western concept." False — Nepal's own constitution (Article 18 and 38) guarantees gender equality and special protections for women. Myth 2: "Men can't be victims of gender discrimination." False — rigid gender norms harm men and boys too. Myth 3: "It's improving on its own." False — the gender gap in education and income has actually widened in rural areas since 2020...</p>
+        </div>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">E</div>
+            <span class="author-name">Elevate Team</span>
+          </div>
+          <div class="card-actions">
+            <button class="action-btn" onclick="likePost(this)">♥ 134</button>
+            <button class="action-btn">💬 44</button>
+          </div>
+        </div>
+      </article>
 
-        // Reset Form Fields after posting
-        document.getElementById("articleForm").reset();
-      });
-    </script>
-  </body>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  // Tag selection
+  let selectedTag = 'awareness';
+  document.querySelectorAll('.tag-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedTag = btn.dataset.tag;
+    });
+  });
+
+  // Like button
+  function likePost(btn) {
+    btn.classList.toggle('liked');
+    const parts = btn.textContent.trim().split(' ');
+    const count = parseInt(parts[1]);
+    btn.textContent = btn.classList.contains('liked')
+      ? `♥ ${count + 1}`
+      : `♥ ${count - 1}`;
+  }
+
+  // Publish article
+  function publishArticle(e) {
+    e.preventDefault();
+
+    const title   = document.getElementById('title').value.trim();
+    const content = document.getElementById('content').value.trim();
+    const author  = document.getElementById('author').value.trim() || 'Anonymous';
+    const photos  = document.getElementById('photos').files;
+    const videos  = document.getElementById('videos').files;
+
+    const display = document.getElementById('articlesDisplay');
+    const noMsg   = display.querySelector('.no-articles');
+    if (noMsg) noMsg.remove();
+
+    const tagClass = selectedTag;
+    const tagLabel = { personal:'Personal Story', awareness:'Awareness', rights:'Rights', story:'Community' }[selectedTag] || selectedTag;
+
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+
+    let mediaHTML = '';
+    if (photos.length > 0) {
+      mediaHTML += '<div class="media-gallery">';
+      for (const f of photos) mediaHTML += `<img src="${URL.createObjectURL(f)}" alt="photo">`;
+      mediaHTML += '</div>';
+    }
+    if (videos.length > 0) {
+      mediaHTML += '<div class="media-gallery">';
+      for (const f of videos) mediaHTML += `<video src="${URL.createObjectURL(f)}" controls></video>`;
+      mediaHTML += '</div>';
+    }
+
+    const initials = author.charAt(0).toUpperCase();
+    const bodyEscaped = content.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+
+    const card = document.createElement('article');
+    card.className = 'article-card';
+    card.innerHTML = `
+      <div class="card-content">
+        <div class="card-header">
+          <h3>${title.replace(/</g,'&lt;')}</h3>
+          <span class="card-tag ${tagClass}">${tagLabel}</span>
+        </div>
+        <p class="publish-date">${dateStr}</p>
+        <p class="body-text">${bodyEscaped}</p>
+      </div>
+      ${mediaHTML}
+      <div class="card-footer">
+        <div class="card-author">
+          <div class="author-avatar">${initials}</div>
+          <span class="author-name">${author.replace(/</g,'&lt;')}</span>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn" onclick="likePost(this)">♥ 0</button>
+          <button class="action-btn">💬 0</button>
+        </div>
+      </div>
+    `;
+
+    display.insertBefore(card, display.firstChild);
+    e.target.reset();
+    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelector('[data-tag="awareness"]').classList.add('selected');
+    selectedTag = 'awareness';
+
+    const count = display.querySelectorAll('.article-card').length;
+    document.getElementById('feedMeta').textContent = `${count} article${count !== 1 ? 's' : ''} from the Elevate community in Nepal.`;
+
+    card.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+</script>
+</body>
 </html>

@@ -1,336 +1,476 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elevate - Close all the Gaps</title>
-    <link rel="stylesheet" href="style.css"/>
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo">
-        <div class="logo-icon">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
-            <!-- Background circle -->
-            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)"/>
-            <!-- Arrow pointing up (growth symbol) -->
-            <path d="M 50 25 L 65 45 L 57 45 L 57 65 L 43 65 L 43 45 L 35 45 Z" fill="white"/>
-            <!-- Decorative circles -->
-            <circle cx="25" cy="70" r="4" fill="rgba(255,255,255,0.7)"/>
-            <circle cx="75" cy="70" r="4" fill="rgba(255,255,255,0.7)"/>
-            <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#e27b6e;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#a074a8;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div class="logo-text">
-          <h2>Elevate</h2>
-          <p class="tagline">Close the Gaps</p>
-        </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="page.html" class="active">Home</a></li>
-        <li><a href="counselling.html">Counselling</a></li>
-        <li><a href="classes.html">Classes</a></li>
-        <li><a href="profile.html">Profile</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="#" class="btn primary-btn">Get Started</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevate — Close the Gaps | Gender Equality in Nepal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <header class="hero" id="home">
-      <div class="hero-content">
-        <div class="badge"><span class="dot"></span> "Close all the Gaps"</div>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="logo" href="page.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <circle cx="50" cy="50" r="48" fill="url(#lg)"/>
+        <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+        <circle cx="24" cy="72" r="4" fill="rgba(255,255,255,0.65)"/>
+        <circle cx="76" cy="72" r="4" fill="rgba(255,255,255,0.65)"/>
+        <defs>
+          <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4785"/>
+            <stop offset="100%" style="stop-color:#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <h2>Elevate</h2>
+      <p class="tagline">Close the Gaps</p>
+    </div>
+  </a>
 
-        <h1>
-          Welcome to <br />
-          <span class="gradient-text">Elevate,</span> <br />
-          grow without any fear of judgement.
-        </h1>
+  <ul class="nav-links">
+    <li><a href="page.html" class="active">Home</a></li>
+    <li><a href="counselling.html">Counselling</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="article.html">Articles</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
 
-        <p>Where you Close all the Gender Gaps. Access helpful assets, build your knowledge base, and connect with a supportive community on your schedule.</p>
+  <div class="nav-actions">
+    <a href="counselling.html" class="btn primary-btn">Get Support</a>
+  </div>
+</nav>
 
-        <div class="cta-group">
-          <a href="#" class="btn primary-btn large-btn"> <span class="btn-icon">📄</span> Articles </a>
-          <a href="#" class="btn outline-btn large-btn"> <span class="btn-icon">💬</span> Posts </a>
-        </div>
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="hero-content">
+    <div class="badge"><span class="dot"></span> Gender Equality · Nepal · 2025</div>
 
-        <div class="hero-stats">
-          <div class="stat-card">
-            <div class="stat-icon">⭐</div>
-            <div>
-              <h4>98% member satisfaction</h4>
-              <p>Trusted support from verified counsellors.</p>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">🌐</div>
-            <div>
-              <h4>Worldwide access</h4>
-              <p>Resources and counselling available anytime.</p>
-            </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">📘</div>
-            <div>
-              <h4>100+ learning assets</h4>
-              <p>Guides, articles, and posts tailored for growth.</p>
-            </div>
-          </div>
-        </div>
+    <h1>
+      Break the Silence.<br/>
+      <span class="gradient-text">Rise Together.</span>
+    </h1>
 
-        <div class="bottom-buttons-row">
-          <a href="#" class="btn sub-btn">⚖️ Laws</a>
-          <a href="#" class="btn sub-btn">🔍 Myths & Facts</a>
-          <a href="#" class="btn sub-btn accent-btn" onclick="toggleHelpline()" onmouseenter="showHelpline()" onmouseleave="hideHelpline()">📞 Helpline</a>
+    <p class="hero-sub">
+      Elevate is Nepal's platform for gender equality — providing education, counselling, legal resources, and a safe community for every person who deserves to be seen, heard, and respected.
+    </p>
 
-            <div id="helpline-info" class="helpline-info">
-             
-              <strong>Helpline Information</strong>
-              <p>Nepal Police: 100</p>
-              <p>Nepal Women Helpline: 1145</p>
-              <p>CIAA: 107</p>
-              <script>
-                const infoBox = document.getElementById("helpline-info");
-                let isLocked = false;
-
-                function showHelpline() {
-                  infoBox.style.display = "block";
-                }
-
-                function hideHelpline() {
-                  if (!isLocked) {
-                    infoBox.style.display = "none";
-                  }
-                }
-
-                function toggleHelpline() {
-                  isLocked = !isLocked; // Toggle the lock state
-                  infoBox.style.display = "block";
-                }
-              </script>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visuals">
-        <div class="bg-circle"></div>
-
-        <div class="floating-card top-card">
-          <div class="icon-box green-bg">✨</div>
-          <div class="card-text">
-            <h4>Daily Motivation</h4>
-            <p>"Your Gender doesnot decides who you are, your actions do."</p>
-          </div>
-        </div>
-
-        <div class="floating-card bottom-card">
-          <div class="teacher-info">
-            <div class="teacher-avatar">🤝</div>
-            <div class="card-text">
-              <h4>Elevate Support</h4>
-              <p>Verified Counsellors</p>
-            </div>
-            <div class="satisfaction-badge">
-              <h2>98%</h2>
-              <p>Satisfaction</p>
-            </div>
-          </div>
-
-          <div class="message-box">
-            <p class="subtitle">Community Status</p>
-            <div class="message">
-              <span class="chat-icon">💡</span>
-              <div>
-                <h5>System Update</h5>
-                <p>New awareness resources are live!</p>
-              </div>
-            </div>
-            <div class="rating">★★★★★ <span>4.9 (500+ Members)</span></div>
-            <a href="#" class="btn primary-btn full-width">Connect to Counselling</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="home-slogans">
-      <div class="slogans-grid">
-        <div class="slogan-card">
-          <h3>Be seen. Be heard. Be respected.</h3>
-          <p>Every journey matters here — your growth is the strongest form of equality.</p>
-        </div>
-        <div class="slogan-card highlight-card">
-          <h3>Learn without labels.</h3>
-          <p>Education, support, and courage belong to everyone.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="popular-topics">
-      <div class="section-inner">
-        <div class="topics-header">
-          <h2>Explore useful topics</h2>
-          <p>Quick access to trusted ideas, rights, and community insights.</p>
-        </div>
-        <div class="topics-grid">
-          <a href="#about" class="topic-pill">Mental Wellness</a>
-          <a href="#" class="topic-pill">Counselling Access</a>
-          <a href="#" class="topic-pill">Gender Rights</a>
-          <a href="#" class="topic-pill">Community Stories</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="features-section">
-      <div class="section-inner">
-        <div class="section-title">
-          <h2>Why Elevate feels different</h2>
-          <p>Designed for confidence, community, and content that helps you shine.</p>
-        </div>
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon">🤝</div>
-            <h4>Safe community</h4>
-            <p>Join a welcoming space where everyone is heard and valued.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">🎓</div>
-            <h4>Smart learning</h4>
-            <p>Find courses, articles, and facts designed for real-world growth.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">💬</div>
-            <h4>Expert guidance</h4>
-            <p>Connect with counsellors and mentors who support self-discovery.</p>
-          </article>
-          <article class="feature-card">
-            <div class="feature-icon">✨</div>
-            <h4>Daily inspiration</h4>
-            <p>Fresh motivation every day to help you stay grounded and energized.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section" id="about">
-      <div class="section-inner">
-        <div class="section-title">
-          <h2>About Us</h2>
-          <p>Elevate is a community built to close gaps and lift every person with equal care.</p>
-        </div>
-        <div class="about-cards">
-          <article>
-            <h4>Mission</h4>
-            <p>To create a safe space where gender equality is learned, practiced, and celebrated every day.</p>
-          </article>
-          <article>
-            <h4>Vision</h4>
-            <p>To empower people of all backgrounds with knowledge, confidence, and a strong sense of belonging.</p>
-          </article>
-          <article>
-            <h4>Promise</h4>
-            <p>Respect, empathy, and fairness are the foundation for every interaction in our community.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="section-inner contact-inner">
-        <div>
-          <h2>Contact Us</h2>
-          <p>Need support? Want to share feedback? We are here for you.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h4>Email</h4>
-            <p>support@elevate.com</p>
-          </div>
-          <div class="contact-card">
-            <h4>Phone</h4>
-            <p>+91 98765 43210</p>
-          </div>
-          <div class="contact-card">
-            <h4>Location</h4>
-            <p>Online community — available worldwide</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="chat-bubble" id="chatToggle" onclick="openChat()" aria-label="Open chat with admin" title="Open chat">
-      <span>💬</span>
+    <div class="cta-group">
+      <a href="classes.html" class="btn primary-btn large-btn">Explore Classes</a>
+      <a href="article.html" class="btn outline-btn large-btn">Read Articles</a>
     </div>
 
-    <div class="chat-panel" id="chatPanel" aria-hidden="true">
-      <div class="chat-header">
+    <div class="hero-stats-cards stagger">
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
         <div>
-          <h4>Chat with Admin</h4>
-          <p>We’re here to help.</p>
-        </div>
-        <button class="close-chat" onclick="closeChat()" aria-label="Close chat">×</button>
-      </div>
-      <div class="chat-messages" id="chatMessages">
-        <div class="chat-message admin">
-          Hello! How can we support you today?
+          <h4>98% Satisfaction</h4>
+          <p>Verified counsellors trusted by our community.</p>
         </div>
       </div>
-      <form class="chat-form" onsubmit="sendMessage(event)">
-        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" />
-        <button type="submit" class="btn primary-btn chat-send">Send</button>
-      </form>
+      <div class="stat-card">
+        <div class="stat-icon">🌐</div>
+        <div>
+          <h4>Nationwide Access</h4>
+          <p>Resources available across all of Nepal.</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📘</div>
+        <div>
+          <h4>100+ Resources</h4>
+          <p>Articles, guides, and courses for growth.</p>
+        </div>
+      </div>
     </div>
 
-    <script>
-      const chatPanel = document.getElementById('chatPanel');
-      const chatToggle = document.getElementById('chatToggle');
-      const chatMessages = document.getElementById('chatMessages');
-      const chatInput = document.getElementById('chatInput');
+    <div class="bottom-buttons-row">
+      <a href="classes.html" class="btn sub-btn">⚖️ Know Your Rights</a>
+      <a href="article.html" class="btn sub-btn">🔍 Myths &amp; Facts</a>
+      <a href="#helplines" class="btn sub-btn accent-btn" onclick="scrollToHelpline(event)">📞 Helplines</a>
+    </div>
+  </div>
 
-      function openChat() {
-        chatPanel.style.display = 'flex';
-        chatPanel.setAttribute('aria-hidden', 'false');
-        chatToggle.style.display = 'none';
-        chatInput.focus();
+  <div class="hero-visuals">
+    <div class="hero-visual-ring"></div>
+    <div class="hero-visual-ring hero-visual-ring-2"></div>
+    <div class="hero-center-icon">✊</div>
+
+    <div class="floating-card top-card">
+      <div class="card-label">Women in Nepal</div>
+      <div class="card-value">1 in 3</div>
+      <div class="card-sub">experience domestic violence</div>
+    </div>
+
+    <div class="floating-card bottom-card">
+      <div class="card-label">Change we drive</div>
+      <div class="card-value">500+</div>
+      <div class="card-sub">community members supported</div>
+    </div>
+  </div>
+</header>
+
+<!-- IMPACT NUMBERS -->
+<section class="impact-section" id="impact">
+  <div class="impact-grid stagger">
+    <div class="impact-item">
+      <span class="big-num" data-target="40">0</span>
+      <p><strong>Child Marriage</strong>40% of girls in Nepal are married before age 18</p>
+    </div>
+    <div class="impact-item">
+      <span class="big-num cyan" data-target="57">0</span>
+      <p><strong>Literacy Gap</strong>Only 57% of women are literate vs 75% of men</p>
+    </div>
+    <div class="impact-item">
+      <span class="big-num gold" data-target="26">0</span>
+      <p><strong>Workforce</strong>Only 26% female labor force participation</p>
+    </div>
+    <div class="impact-item">
+      <span class="big-num" data-target="95">0</span>
+      <p><strong>Global Rank</strong>Nepal ranks 95/146 on WEF Gender Gap Index</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <span class="section-label reveal">What We Offer</span>
+    <h2 class="section-title reveal">Why Elevate is different</h2>
+    <p class="section-subtitle reveal">Built for the people of Nepal — combining education, support, and community to drive real change.</p>
+
+    <div class="features-grid stagger">
+      <article class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h4>Safe Community</h4>
+        <p>A welcoming space where everyone is heard, respected, and never judged for who they are.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h4>Smart Learning</h4>
+        <p>Curated courses on legal rights, self-empowerment, and workplace equality built for Nepal.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h4>Expert Counselling</h4>
+        <p>Connect with trained counsellors who understand gender-based challenges in Nepal.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">✊</div>
+        <h4>Legal Awareness</h4>
+        <p>Know your rights under Nepal's constitution and legal protections available to you.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">📖</div>
+        <h4>Community Articles</h4>
+        <p>Real stories, myths debunked, and knowledge shared by and for our growing community.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h4>Daily Inspiration</h4>
+        <p>Fresh motivation and resources to help you stay grounded, courageous, and energized.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SLOGANS -->
+<div class="slogans-section">
+  <div class="slogans-grid stagger">
+    <div class="slogan-card">
+      <h3>Be seen. Be heard.<br/>Be respected.</h3>
+      <p>Every journey matters here — your growth is the strongest form of equality.</p>
+    </div>
+    <div class="slogan-card highlight-card">
+      <h3>Learn without labels.</h3>
+      <p>Education, support, and courage belong to everyone — regardless of gender.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TOPICS -->
+<div class="topics-section">
+  <div class="section-inner">
+    <div class="topics-header reveal">
+      <h2>Explore what matters</h2>
+      <p>Quick access to trusted ideas, rights, and community insights.</p>
+    </div>
+    <div class="topics-grid stagger">
+      <a href="#" class="topic-pill">Mental Wellness</a>
+      <a href="counselling.html" class="topic-pill">Counselling Access</a>
+      <a href="classes.html" class="topic-pill">Gender Rights</a>
+      <a href="article.html" class="topic-pill">Community Stories</a>
+      <a href="#" class="topic-pill">Chhaupadi Awareness</a>
+      <a href="#" class="topic-pill">Child Marriage</a>
+      <a href="#" class="topic-pill">Workplace Equality</a>
+      <a href="#" class="topic-pill">Safe Spaces</a>
+      <a href="#" class="topic-pill">Digital Safety</a>
+    </div>
+  </div>
+</div>
+
+<!-- HELPLINES -->
+<div class="helpline-section reveal" id="helplines">
+  <h2>📞 Emergency Helplines — Nepal</h2>
+  <p class="sub">If you are in danger or need immediate support, contact these verified helplines.</p>
+  <div class="helpline-grid stagger">
+    <div class="helpline-card">
+      <div class="h-icon">👮</div>
+      <h4>Nepal Police</h4>
+      <div class="h-number">100</div>
+    </div>
+    <div class="helpline-card">
+      <div class="h-icon">👩</div>
+      <h4>Women's Helpline</h4>
+      <div class="h-number">1145</div>
+    </div>
+    <div class="helpline-card">
+      <div class="h-icon">🏛️</div>
+      <h4>CIAA</h4>
+      <div class="h-number">107</div>
+    </div>
+    <div class="helpline-card">
+      <div class="h-icon">🧠</div>
+      <h4>Mental Health</h4>
+      <div class="h-number">1166</div>
+    </div>
+    <div class="helpline-card">
+      <div class="h-icon">⚖️</div>
+      <h4>Legal Aid Nepal</h4>
+      <div class="h-number">01-4262275</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <span class="section-label reveal">Who We Are</span>
+    <h2 class="section-title reveal">About Elevate</h2>
+    <p class="section-subtitle reveal">A community built to close gender gaps and lift every person with equal care — rooted in Nepal.</p>
+
+    <div class="about-cards stagger">
+      <article>
+        <h4>Our Mission</h4>
+        <p>To create a safe space where gender equality is learned, practiced, and celebrated every day — specifically for the challenges facing people in Nepal.</p>
+      </article>
+      <article>
+        <h4>Our Vision</h4>
+        <p>A Nepal where every person — regardless of gender — has equal access to education, opportunity, and a life free from discrimination and violence.</p>
+      </article>
+      <article>
+        <h4>Our Promise</h4>
+        <p>Respect, empathy, and fairness form the foundation of every interaction. You will never be judged here — only supported.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <span class="section-label reveal">Get in Touch</span>
+    <h2 class="section-title reveal">Contact Us</h2>
+    <p class="section-subtitle reveal">Need support? Want to collaborate or share feedback? We're here.</p>
+    <div class="contact-grid stagger">
+      <div class="contact-card">
+        <h4>Email</h4>
+        <p>support@elevate-nepal.org</p>
+      </div>
+      <div class="contact-card">
+        <h4>Community</h4>
+        <p>Join our growing online community platform</p>
+      </div>
+      <div class="contact-card">
+        <h4>Location</h4>
+        <p>Kathmandu, Nepal — serving nationwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="page.html">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+              <circle cx="50" cy="50" r="48" fill="url(#lgf)"/>
+              <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+              <defs>
+                <linearGradient id="lgf" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ff4785"/>
+                  <stop offset="100%" style="stop-color:#7c3aed"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text"><h2>Elevate</h2></div>
+        </a>
+        <p>Closing gender gaps in Nepal through education, counselling, and community. Every voice deserves to be heard.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="page.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="article.html">Articles</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="#helplines">Helplines</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Helplines</h5>
+        <ul>
+          <li><a href="#">Police: 100</a></li>
+          <li><a href="#">Women: 1145</a></li>
+          <li><a href="#">Mental Health: 1166</a></li>
+          <li><a href="#">CIAA: 107</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Elevate Nepal. Built with purpose.</span>
+      <span>Empowering gender equality — one person at a time.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT BUBBLE -->
+<div class="chat-bubble" id="chatToggle" onclick="openChat()" title="Chat with us">💬</div>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <div>
+      <h4>Elevate Support</h4>
+      <p>We're here to help you.</p>
+    </div>
+    <button class="close-chat" onclick="closeChat()">×</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-message admin">
+      Hello! Welcome to Elevate. How can we support you today? 💙
+    </div>
+  </div>
+  <form class="chat-form" onsubmit="sendMessage(event)">
+    <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off"/>
+    <button type="submit" class="btn primary-btn chat-send">Send</button>
+  </form>
+</div>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-      function closeChat() {
-        chatPanel.style.display = 'none';
-        chatPanel.setAttribute('aria-hidden', 'true');
-        chatToggle.style.display = 'grid';
+  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+  // Animated counter
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '%';
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
       }
+      el.textContent = Math.floor(current) + suffix;
+    }, 16);
+  }
 
-      function addChatMessage(type, text) {
-        const message = document.createElement('div');
-        message.className = `chat-message ${type}`;
-        message.textContent = text;
-        chatMessages.appendChild(message);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        entry.target.dataset.animated = 'true';
+        animateCounter(entry.target);
       }
+    });
+  }, { threshold: 0.5 });
 
-      function sendMessage(event) {
-        event.preventDefault();
-        const message = chatInput.value.trim();
-        if (!message) return;
+  document.querySelectorAll('.big-num[data-target]').forEach(el => counterObserver.observe(el));
 
-        addChatMessage('user', message);
-        chatInput.value = '';
+  // Scroll to helplines
+  function scrollToHelpline(e) {
+    e.preventDefault();
+    document.getElementById('helplines').scrollIntoView({ behavior: 'smooth' });
+  }
 
-        setTimeout(() => {
-          addChatMessage('admin', 'Thanks for reaching out! Our admin will get back to you shortly.');
-        }, 800);
-      }
+  // Chat
+  const chatPanel = document.getElementById('chatPanel');
+  const chatToggle = document.getElementById('chatToggle');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
 
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && chatPanel.style.display === 'flex') {
-          closeChat();
-        }
-      });
-    </script>
-  </body>
+  function openChat() {
+    chatPanel.style.display = 'flex';
+    chatToggle.style.display = 'none';
+    chatInput.focus();
+  }
+
+  function closeChat() {
+    chatPanel.style.display = 'none';
+    chatToggle.style.display = 'grid';
+  }
+
+  function addMsg(type, text) {
+    const m = document.createElement('div');
+    m.className = `chat-message ${type}`;
+    m.textContent = text;
+    chatMessages.appendChild(m);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  const autoReplies = [
+    "Thank you for reaching out. You are not alone. 💙",
+    "Our team is here to support you. Can you share more?",
+    "For urgent help, please call the Women's Helpline: 1145.",
+    "We'll connect you with a counsellor as soon as possible.",
+  ];
+  let replyIndex = 0;
+
+  function sendMessage(e) {
+    e.preventDefault();
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    addMsg('user', msg);
+    chatInput.value = '';
+    setTimeout(() => {
+      addMsg('admin', autoReplies[replyIndex % autoReplies.length]);
+      replyIndex++;
+    }, 900);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && chatPanel.style.display === 'flex') closeChat();
+  });
+</script>
+</body>
 </html>

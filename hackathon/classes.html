@@ -1,98 +1,262 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elevate - Classes</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo">
-        <div class="logo-icon">E</div>
-        <h2>Elevate</h2>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevate — Classes</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a class="logo" href="page.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <circle cx="50" cy="50" r="48" fill="url(#lgcl)"/>
+        <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+        <defs>
+          <linearGradient id="lgcl" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4785"/>
+            <stop offset="100%" style="stop-color:#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="logo-text"><h2>Elevate</h2><p class="tagline">Close the Gaps</p></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="page.html">Home</a></li>
+    <li><a href="counselling.html">Counselling</a></li>
+    <li><a href="classes.html" class="active">Classes</a></li>
+    <li><a href="article.html">Articles</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#course-grid" class="btn primary-btn">Browse All</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main class="classes-hero">
+  <div class="hero-content reveal">
+    <div class="badge"><span class="dot"></span> Free Learning</div>
+    <h1>
+      Knowledge is<br/>
+      <span class="gradient-text">your greatest power.</span>
+    </h1>
+    <p class="hero-sub">Expert-led courses on gender rights, self-empowerment, and equality — designed for the realities of Nepal. Learn at your own pace, free of charge.</p>
+    <div class="cta-group">
+      <a href="#course-grid" class="btn primary-btn large-btn">Browse Classes</a>
+      <a href="counselling.html" class="btn outline-btn large-btn">Get Support</a>
+    </div>
+  </div>
+  <div class="classes-hero-visual">
+    <div class="hero-card">
+      <div class="hero-icon">📘</div>
+      <h4>Self-Paced Learning</h4>
+      <p>Study at your own speed — no deadlines, no judgment, just growth.</p>
+    </div>
+    <div class="hero-card">
+      <div class="hero-icon">🏆</div>
+      <h4>Earn Certificates</h4>
+      <p>Receive recognition for every course you complete.</p>
+    </div>
+  </div>
+</main>
+
+<!-- COURSES -->
+<section class="classes-section" id="course-grid">
+  <div class="section-header reveal">
+    <h2>All Courses</h2>
+    <p>Choose what matters most to your growth and purpose.</p>
+  </div>
+  <div class="classes-list stagger">
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">⚖️</span>
+        <span class="course-level">Beginner</span>
       </div>
-      <ul class="nav-links">
-        <li><a href="page.html">Home</a></li>
-        <li><a href="counselling.html">Counselling</a></li>
-        <li><a href="classes.html" class="active">Classes</a></li>
-        <li><a href="profile.html">Profile</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="page.html" class="btn primary-btn">Back Home</a>
+      <h3>Legal Rights &amp; Laws</h3>
+      <p>Understand Nepal's constitutional protections, CEDAW commitments, and legal mechanisms available to survivors of gender-based violence.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">💪</span>
+        <span class="course-level accent">Intermediate</span>
       </div>
-    </nav>
+      <h3>Self-Empowerment</h3>
+      <p>Build unshakeable confidence, set meaningful goals, and learn to stand firmly in your identity even in the face of social pressure.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
 
-    <main class="hero classes-hero">
-      <div class="hero-content">
-        <div class="badge"><span class="dot"></span> Discover Learning</div>
-        <h1>Classes designed for growth, equality and confidence.</h1>
-        <p>Join our inclusive training path with expert-led courses, thoughtful community support, and clear outcomes.</p>
-        <a href="#course-grid" class="btn primary-btn large-btn">Browse Classes</a>
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">🤝</span>
+        <span class="course-level">Beginner</span>
       </div>
-      <div class="hero-visuals classes-hero-visual">
-        <div class="hero-card">
-          <div class="hero-icon">📘</div>
-          <h4>Guided Learning</h4>
-          <p>Courses that help you learn at your own pace, without judgment.</p>
-        </div>
-        <div class="hero-card">
-          <div class="hero-icon">🤝</div>
-          <h4>Community Support</h4>
-          <p>Connect with mentors and peers who respect your journey.</p>
-        </div>
+      <h3>Building Allies</h3>
+      <p>Learn how to support equality in your relationships, schools, and communities — because gender equality requires everyone's participation.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">💼</span>
+        <span class="course-level advanced">Advanced</span>
       </div>
-    </main>
+      <h3>Workplace Equality</h3>
+      <p>Navigate workplace discrimination, understand your employment rights, and learn advocacy and inclusive leadership in Nepali workplaces.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
 
-    <section class="classes-section" id="course-grid">
-      <div class="section-header">
-        <h2>Popular Courses</h2>
-        <p>Choose what matters most to your growth and purpose.</p>
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">🎓</span>
+        <span class="course-level">Beginner</span>
       </div>
+      <h3>Education Access</h3>
+      <p>Explore tools, scholarships, and support systems for equal access to education — especially for girls in rural and Terai regions.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
 
-      <div class="classes-list">
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">⚖️</span><span class="course-level">Beginner</span></div>
-          <h3>Legal Rights & Laws</h3>
-          <p>Understand rights, protection, and legal empowerment in your community.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
-
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">💪</span><span class="course-level accent">Intermediate</span></div>
-          <h3>Self-Empowerment</h3>
-          <p>Build confidence, set goals, and learn to stand firmly in your identity.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
-
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">🤝</span><span class="course-level">Beginner</span></div>
-          <h3>Building Allies</h3>
-          <p>Support equality in your relationships and create stronger communities.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
-
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">💼</span><span class="course-level accent">Advanced</span></div>
-          <h3>Workplace Equality</h3>
-          <p>Navigate workplace barriers, advocacy, and inclusive leadership.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
-
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">🎓</span><span class="course-level">Beginner</span></div>
-          <h3>Education Access</h3>
-          <p>Explore tools and support for equal access to learning opportunities.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
-
-        <article class="course-card">
-          <div class="course-top"><span class="course-icon">🗣️</span><span class="course-level accent">Intermediate</span></div>
-          <h3>Speaking Your Voice</h3>
-          <p>Learn communication skills, confidence, and how to share your perspective.</p>
-          <a href="#" class="btn outline-btn">Enroll Now</a>
-        </article>
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">🗣️</span>
+        <span class="course-level accent">Intermediate</span>
       </div>
-    </section>
-  </body>
+      <h3>Speaking Your Voice</h3>
+      <p>Develop communication skills, assertiveness, and the confidence to share your perspective in difficult conversations and public spaces.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">🌸</span>
+        <span class="course-level">Beginner</span>
+      </div>
+      <h3>Understanding Chhaupadi</h3>
+      <p>A fact-based course on menstrual practices, the Chhaupadi tradition, and how communities can move toward safer, equal practices.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">💑</span>
+        <span class="course-level accent">Intermediate</span>
+      </div>
+      <h3>Preventing Child Marriage</h3>
+      <p>Understanding the causes and consequences of early marriage in Nepal and what communities, families, and individuals can do.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+    <article class="course-card">
+      <div class="course-top">
+        <span class="course-icon">💻</span>
+        <span class="course-level advanced">Advanced</span>
+      </div>
+      <h3>Digital Safety for Women</h3>
+      <p>Protect yourself online — learn about digital harassment, privacy, and how to safely navigate social media in Nepal.</p>
+      <a href="#" class="btn outline-btn small-btn" onclick="enrollCourse(event, this)">Enroll Free</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- TOAST NOTIFICATION -->
+<div id="enrollToast" style="
+  display:none;
+  position:fixed;
+  bottom:90px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--grad1);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:var(--r-full);
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  font-size:0.95rem;
+  z-index:600;
+  box-shadow:0 8px 30px rgba(255,71,133,0.4);
+  transition:opacity 0.4s;
+">🎉 Enrolled! Check your profile for progress.</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="page.html">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+              <circle cx="50" cy="50" r="48" fill="url(#lgfcl)"/>
+              <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+              <defs>
+                <linearGradient id="lgfcl" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ff4785"/>
+                  <stop offset="100%" style="stop-color:#7c3aed"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text"><h2>Elevate</h2></div>
+        </a>
+        <p>Free, expert-led courses to close Nepal's gender gaps — one learner at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="page.html">Home</a></li>
+          <li><a href="counselling.html">Counselling</a></li>
+          <li><a href="article.html">Articles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Courses</h5>
+        <ul>
+          <li><a href="#">Legal Rights</a></li>
+          <li><a href="#">Self-Empowerment</a></li>
+          <li><a href="#">Workplace Equality</a></li>
+          <li><a href="#">Digital Safety</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Emergency</h5>
+        <ul>
+          <li><a href="#">Police: 100</a></li>
+          <li><a href="#">Women: 1145</a></li>
+          <li><a href="#">Mental Health: 1166</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Elevate Nepal.</span>
+      <span>All courses are 100% free.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+  function enrollCourse(e, btn) {
+    e.preventDefault();
+    btn.textContent = '✓ Enrolled';
+    btn.classList.remove('outline-btn');
+    btn.classList.add('primary-btn');
+    const toast = document.getElementById('enrollToast');
+    toast.style.display = 'block';
+    toast.style.opacity = '1';
+    setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.style.display='none', 400); }, 2800);
+  }
+</script>
+</body>
 </html>

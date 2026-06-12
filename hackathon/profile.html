@@ -1,35 +1,295 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elevate - Profile</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="logo">
-        <div class="logo-icon">E</div>
-        <h2>Elevate</h2>
-      </div>
-      <ul class="nav-links">
-        <li><a href="page.html">Home</a></li>
-        <li><a href="counselling.html">Counselling</a></li>
-        <li><a href="page.html#classes">Classes</a></li>
-        <li><a href="profile.html" class="active">Profile</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="page.html" class="btn primary-btn">Back Home</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elevate — My Profile</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <main class="hero profile-hero">
-      <div class="hero-content">
-        <div class="badge"><span class="dot"></span> Your Profile</div>
-        <h1>Profile is ready to build.</h1>
-        <p>This page is intentionally clear so you can add your profile details, progress, and membership features later.</p>
-        <a href="page.html" class="btn outline-btn large-btn">Return to Home</a>
+<nav class="navbar" id="navbar">
+  <a class="logo" href="page.html">
+    <div class="logo-icon">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+        <circle cx="50" cy="50" r="48" fill="url(#lgpr)"/>
+        <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+        <defs>
+          <linearGradient id="lgpr" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4785"/>
+            <stop offset="100%" style="stop-color:#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="logo-text"><h2>Elevate</h2><p class="tagline">Close the Gaps</p></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="page.html">Home</a></li>
+    <li><a href="counselling.html">Counselling</a></li>
+    <li><a href="classes.html">Classes</a></li>
+    <li><a href="article.html">Articles</a></li>
+    <li><a href="profile.html" class="active">Profile</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="page.html" class="btn ghost-btn">← Back Home</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main class="profile-hero">
+  <div class="hero-content reveal">
+    <div class="badge"><span class="dot"></span> Your Journey</div>
+    <h1>My <span class="gradient-text">Elevate</span> Profile</h1>
+    <p class="hero-sub">Track your learning, connect with mentors, and celebrate your growth. Every step forward matters.</p>
+  </div>
+</main>
+
+<!-- PROFILE SECTION -->
+<section class="profile-section">
+  <div class="profile-header reveal">
+    <h2>Your Dashboard</h2>
+    <p>Your personal learning journey at Elevate Nepal</p>
+  </div>
+
+  <div class="profile-container">
+    <!-- LEFT: Profile Card -->
+    <div>
+      <div class="profile-card reveal">
+        <div class="profile-avatar">🌸</div>
+        <div class="profile-name">Anita Shrestha</div>
+        <div class="profile-status">Active Member · Kathmandu</div>
+        <div class="profile-stats">
+          <div class="stat"><span class="stat-number">3</span><span class="stat-label">Courses</span></div>
+          <div class="stat"><span class="stat-number">12</span><span class="stat-label">Articles</span></div>
+          <div class="stat"><span class="stat-number">5</span><span class="stat-label">Sessions</span></div>
+        </div>
+        <a href="counselling.html" class="btn primary-btn full-width">Book Counselling</a>
       </div>
-    </main>
-  </body>
+
+      <!-- Achievements -->
+      <div class="section-card reveal" style="margin-top:22px;">
+        <div class="section-header">
+          <h3>🏆 Achievements</h3>
+          <p>Badges earned on your journey</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:rgba(255,71,133,0.08);border:1px solid rgba(255,71,133,0.2);border-radius:12px;padding:16px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:6px;">🌟</div>
+            <div style="font-size:0.8rem;font-weight:600;color:var(--pink);">First Step</div>
+          </div>
+          <div style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.2);border-radius:12px;padding:16px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:6px;">📖</div>
+            <div style="font-size:0.8rem;font-weight:600;color:var(--purple);">Learner</div>
+          </div>
+          <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:16px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:6px;">💪</div>
+            <div style="font-size:0.8rem;font-weight:600;color:var(--green);">Advocate</div>
+          </div>
+          <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:12px;padding:16px;text-align:center;opacity:0.45;">
+            <div style="font-size:1.8rem;margin-bottom:6px;">🔒</div>
+            <div style="font-size:0.8rem;font-weight:600;color:var(--gold);">Locked</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Content -->
+    <div>
+      <!-- My Classes -->
+      <div class="section-card reveal">
+        <div class="section-header">
+          <h3>My Classes</h3>
+          <p>Courses you're enrolled in</p>
+        </div>
+        <div class="classes-grid stagger">
+          <div class="class-item">
+            <div class="class-icon">⚖️</div>
+            <h4>Legal Rights &amp; Laws</h4>
+            <p>Nepal's constitutional protections</p>
+            <div class="class-tag">In Progress</div>
+            <div style="margin-top:10px;background:var(--border);border-radius:4px;height:4px;">
+              <div style="width:65%;height:100%;background:var(--grad1);border-radius:4px;"></div>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text3);margin-top:5px;">65% complete</p>
+          </div>
+          <div class="class-item">
+            <div class="class-icon">💪</div>
+            <h4>Self-Empowerment</h4>
+            <p>Build confidence and identity</p>
+            <div class="class-tag">In Progress</div>
+            <div style="margin-top:10px;background:var(--border);border-radius:4px;height:4px;">
+              <div style="width:30%;height:100%;background:var(--grad2);border-radius:4px;"></div>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text3);margin-top:5px;">30% complete</p>
+          </div>
+          <div class="class-item">
+            <div class="class-icon">🗣️</div>
+            <h4>Speaking Your Voice</h4>
+            <p>Communication and confidence</p>
+            <div class="class-tag" style="background:var(--green);">Completed</div>
+            <div style="margin-top:10px;background:var(--border);border-radius:4px;height:4px;">
+              <div style="width:100%;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:4px;"></div>
+            </div>
+            <p style="font-size:0.72rem;color:var(--green);margin-top:5px;">✓ Completed</p>
+          </div>
+        </div>
+        <div style="margin-top:20px;text-align:center;">
+          <a href="classes.html" class="btn ghost-btn small-btn">Browse More Classes →</a>
+        </div>
+      </div>
+
+      <!-- My Mentors -->
+      <div class="section-card reveal">
+        <div class="section-header">
+          <h3>My Mentors</h3>
+          <p>Your connected support network</p>
+        </div>
+        <div class="mentors-grid stagger">
+          <div class="mentor-card">
+            <div class="mentor-avatar">👩</div>
+            <h4>Priya Sharma</h4>
+            <div class="mentor-role">Gender &amp; Trauma Specialist</div>
+            <p class="mentor-bio">Guiding you through legal and emotional support</p>
+            <div class="mentor-availability">Available Now</div>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar">🧑</div>
+            <h4>Rajan Thapa</h4>
+            <div class="mentor-role">Empowerment Coach</div>
+            <p class="mentor-bio">Helping build confidence and resilience</p>
+            <div class="mentor-availability">Available Now</div>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar">👩‍🎓</div>
+            <h4>Asha Pradhan</h4>
+            <div class="mentor-role">Legal Rights Counsellor</div>
+            <p class="mentor-bio">Your guide to Nepal's legal protections</p>
+            <div class="mentor-availability" style="background:rgba(251,191,36,0.1);color:var(--gold);">Next: Tomorrow</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;text-align:center;">
+          <a href="counselling.html" class="btn primary-btn small-btn">Book a Session</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Values Section -->
+  <div class="values-section reveal" style="max-width:1100px;margin:24px auto 0;">
+    <div class="values-header">
+      <h2>Our Core Values</h2>
+      <p>The principles that guide every interaction on Elevate</p>
+    </div>
+    <div class="values-grid stagger">
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h4>Safety First</h4>
+        <p>Your safety and privacy are our highest priority — always.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚖️</div>
+        <h4>Equal Dignity</h4>
+        <p>Every person deserves respect regardless of gender, caste, or background.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💡</div>
+        <h4>Knowledge is Power</h4>
+        <p>Education and awareness are the strongest tools for lasting change.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Community</h4>
+        <p>We rise together — no one should face gender inequality alone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission Section -->
+  <div class="mission-section reveal" style="max-width:1100px;margin:24px auto 0;">
+    <h2>Our Mission in Nepal</h2>
+    <div class="mission-content stagger">
+      <div class="mission-item">
+        <h4>End Gender Violence</h4>
+        <p>Provide resources, support, and legal awareness to survivors and at-risk communities across Nepal.</p>
+      </div>
+      <div class="mission-item">
+        <h4>Close the Education Gap</h4>
+        <p>Ensure equal access to learning opportunities for girls and women in all regions of Nepal.</p>
+      </div>
+      <div class="mission-item">
+        <h4>Empower Communities</h4>
+        <p>Build local champions for gender equality who drive change within their own families and communities.</p>
+      </div>
+      <div class="mission-item">
+        <h4>Change Narratives</h4>
+        <p>Challenge harmful traditions and replace them with evidence-based understanding and mutual respect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="page.html">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+              <circle cx="50" cy="50" r="48" fill="url(#lgfpr)"/>
+              <path d="M50 22 L67 46 L58 46 L58 68 L42 68 L42 46 L33 46 Z" fill="white"/>
+              <defs>
+                <linearGradient id="lgfpr" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ff4785"/>
+                  <stop offset="100%" style="stop-color:#7c3aed"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="logo-text"><h2>Elevate</h2></div>
+        </a>
+        <p>Your journey to equality starts here. Every step you take matters.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="page.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="counselling.html">Counselling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Account</h5>
+        <ul>
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="#">My Progress</a></li>
+          <li><a href="article.html">My Articles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Emergency</h5>
+        <ul>
+          <li><a href="#">Police: 100</a></li>
+          <li><a href="#">Women: 1145</a></li>
+          <li><a href="#">Mental Health: 1166</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Elevate Nepal.</span>
+      <span>You are stronger than you know. 💙</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+</script>
+</body>
 </html>
