@@ -9,8 +9,27 @@
   <body>
     <nav class="navbar">
       <div class="logo">
-        <div class="logo-icon">E</div>
-        <h2>Elevate</h2>
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+            <!-- Background circle -->
+            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)"/>
+            <!-- Arrow pointing up (growth symbol) -->
+            <path d="M 50 25 L 65 45 L 57 45 L 57 65 L 43 65 L 43 45 L 35 45 Z" fill="white"/>
+            <!-- Decorative circles -->
+            <circle cx="25" cy="70" r="4" fill="rgba(255,255,255,0.7)"/>
+            <circle cx="75" cy="70" r="4" fill="rgba(255,255,255,0.7)"/>
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#e27b6e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#a074a8;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h2>Elevate</h2>
+          <p class="tagline">Close the Gaps</p>
+        </div>
       </div>
       <ul class="nav-links">
         <li><a href="page.html" class="active">Home</a></li>
@@ -40,12 +59,36 @@
           <a href="#" class="btn outline-btn large-btn"> <span class="btn-icon">💬</span> Posts </a>
         </div>
 
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <div>
+              <h4>98% member satisfaction</h4>
+              <p>Trusted support from verified counsellors.</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🌐</div>
+            <div>
+              <h4>Worldwide access</h4>
+              <p>Resources and counselling available anytime.</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📘</div>
+            <div>
+              <h4>100+ learning assets</h4>
+              <p>Guides, articles, and posts tailored for growth.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="bottom-buttons-row">
           <a href="#" class="btn sub-btn">⚖️ Laws</a>
           <a href="#" class="btn sub-btn">🔍 Myths & Facts</a>
-          <a  class="btn sub-btn" onclick="toggleHelpline()" onmouseenter="showHelpline()" onmouseleave="hideHelpline()">📞 Helpline</a>
+          <a href="#" class="btn sub-btn accent-btn" onclick="toggleHelpline()" onmouseenter="showHelpline()" onmouseleave="hideHelpline()">📞 Helpline</a>
 
-            <div id="helpline-info">
+            <div id="helpline-info" class="helpline-info">
               <strong>Helpline Information</strong>
               <p>Nepal Police: 100</p>
               <p>Nepal Women Helpline: 1145</p>
@@ -127,6 +170,52 @@
       </div>
     </section>
 
+    <section class="popular-topics">
+      <div class="section-inner">
+        <div class="topics-header">
+          <h2>Explore useful topics</h2>
+          <p>Quick access to trusted ideas, rights, and community insights.</p>
+        </div>
+        <div class="topics-grid">
+          <a href="#about" class="topic-pill">Mental Wellness</a>
+          <a href="#" class="topic-pill">Counselling Access</a>
+          <a href="#" class="topic-pill">Gender Rights</a>
+          <a href="#" class="topic-pill">Community Stories</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Why Elevate feels different</h2>
+          <p>Designed for confidence, community, and content that helps you shine.</p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h4>Safe community</h4>
+            <p>Join a welcoming space where everyone is heard and valued.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🎓</div>
+            <h4>Smart learning</h4>
+            <p>Find courses, articles, and facts designed for real-world growth.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h4>Expert guidance</h4>
+            <p>Connect with counsellors and mentors who support self-discovery.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h4>Daily inspiration</h4>
+            <p>Fresh motivation every day to help you stay grounded and energized.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section" id="about">
       <div class="section-inner">
         <div class="section-title">
@@ -172,5 +261,75 @@
         </div>
       </div>
     </section>
+
+    <div class="chat-bubble" id="chatToggle" onclick="openChat()" aria-label="Open chat with admin" title="Open chat">
+      <span>💬</span>
+    </div>
+
+    <div class="chat-panel" id="chatPanel" aria-hidden="true">
+      <div class="chat-header">
+        <div>
+          <h4>Chat with Admin</h4>
+          <p>We’re here to help.</p>
+        </div>
+        <button class="close-chat" onclick="closeChat()" aria-label="Close chat">×</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message admin">
+          Hello! How can we support you today?
+        </div>
+      </div>
+      <form class="chat-form" onsubmit="sendMessage(event)">
+        <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off" />
+        <button type="submit" class="btn primary-btn chat-send">Send</button>
+      </form>
+    </div>
+
+    <script>
+      const chatPanel = document.getElementById('chatPanel');
+      const chatToggle = document.getElementById('chatToggle');
+      const chatMessages = document.getElementById('chatMessages');
+      const chatInput = document.getElementById('chatInput');
+
+      function openChat() {
+        chatPanel.style.display = 'flex';
+        chatPanel.setAttribute('aria-hidden', 'false');
+        chatToggle.style.display = 'none';
+        chatInput.focus();
+      }
+
+      function closeChat() {
+        chatPanel.style.display = 'none';
+        chatPanel.setAttribute('aria-hidden', 'true');
+        chatToggle.style.display = 'grid';
+      }
+
+      function addChatMessage(type, text) {
+        const message = document.createElement('div');
+        message.className = `chat-message ${type}`;
+        message.textContent = text;
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      function sendMessage(event) {
+        event.preventDefault();
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addChatMessage('user', message);
+        chatInput.value = '';
+
+        setTimeout(() => {
+          addChatMessage('admin', 'Thanks for reaching out! Our admin will get back to you shortly.');
+        }, 800);
+      }
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && chatPanel.style.display === 'flex') {
+          closeChat();
+        }
+      });
+    </script>
   </body>
 </html>
