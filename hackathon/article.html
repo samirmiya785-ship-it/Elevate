@@ -28,12 +28,17 @@
     </div>
   </a>
   <div style="display:flex;align-items:center;gap:24px;">
-    <nav style="display:flex;gap:4px;">
-      <a href="page.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Home</a>
-      <a href="counselling.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Counselling</a>
-      <a href="classes.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Classes</a>
-      <a href="profile.html" style="text-decoration:none;color:var(--text2);font-size:0.9rem;font-weight:500;padding:7px 14px;border-radius:999px;transition:all 0.3s;">Profile</a>
+    <nav class="nav-links">
+      <a href="page.html">Home</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="classes.html">Classes</a>
+      <a href="article.html" class="active">Articles</a>
+      <a href="profile.html">Profile</a>
     </nav>
+    <div class="nav-actions">
+      <a href="profile.html#premium" class="btn premium-btn">Premium</a>
+      <button class="btn icon-btn" type="button" onclick="openSettings()" aria-label="Open settings">⚙</button>
+    </div>
   </div>
 </nav>
 
@@ -192,6 +197,8 @@
 
 </main>
 
+<script src="profile-data.js"></script>
+<script src="settings.js"></script>
 <script>
   // Navbar scroll
   const navbar = document.getElementById('navbar');
@@ -277,6 +284,15 @@
     `;
 
     display.insertBefore(card, display.firstChild);
+    saveElevateStory({
+      title,
+      content,
+      author,
+      tag: tagClass,
+      tagLabel,
+      createdAt: now.toISOString(),
+      source: 'article'
+    });
     e.target.reset();
     document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('selected'));
     document.querySelector('[data-tag="awareness"]').classList.add('selected');

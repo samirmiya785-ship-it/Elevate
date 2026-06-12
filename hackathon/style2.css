@@ -8,8 +8,11 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #e27b6e;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(47,111,237,0.16), transparent 30%),
+      radial-gradient(circle at 88% 12%, rgba(15,157,143,0.14), transparent 28%),
+      linear-gradient(180deg, #fff8f6, #f4fbf8);
+    color: #17202a;
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,7 +21,7 @@ body {
 }
 
 header {
-    background-color: #e1784f;
+    background: linear-gradient(135deg, #2f6fed 0%, #0f9d8f 100%);
     color: #ffffff;
     width: 100%;
     text-align: center;
@@ -34,7 +37,7 @@ header h1 {
 header p {
     margin: 0.5rem 0 0 0;
     font-size: 1.1rem;
-    color: #bdc3c7;
+    color: rgba(255,255,255,0.82);
 }
 
 /* --- Grid Container Configuration --- */
@@ -78,7 +81,7 @@ header p {
 
 /* The Main Law Button/Header */
 .main-law-btn {
-    background-color: #34495e;
+    background: linear-gradient(135deg, #2f6fed 0%, #0f9d8f 100%);
     color: white;
     padding: 1.25rem;
     font-size: 1.2rem;
@@ -94,7 +97,7 @@ header p {
 }
 
 .law-card:hover .main-law-btn {
-    background-color: #3498db; 
+    background: linear-gradient(135deg, #0f9d8f 0%, #54bed0 100%);
 }
 
 /* Sub-laws Container (Hidden by default) */
@@ -113,7 +116,7 @@ header p {
     max-height: 600px; 
     opacity: 1;
     visibility: visible;
-    border-top: 2px solid #3498db;
+    border-top: 2px solid #2f6fed;
 }
 
 /* Individual Sub-law Styling */
@@ -150,4 +153,17 @@ header p {
         grid-column: auto;
         width: 100%; /* Spans full width on mobile viewports */
     }
+}
+
+.navbar {
+    width: 100%;
+    align-self: stretch;
+}
+
+.logo {
+    color: inherit;
+}
+
+.btn {
+    text-decoration: none;
 }

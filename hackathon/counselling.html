@@ -32,7 +32,8 @@
     <li><a href="profile.html">Profile</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="#book" class="btn primary-btn">Book a Session</a>
+    <a href="profile.html#premium" class="btn premium-btn">Premium</a>
+    <button class="btn icon-btn" type="button" onclick="openSettings()" aria-label="Open settings">⚙</button>
   </div>
 </nav>
 
@@ -222,6 +223,7 @@
   </div>
 </footer>
 
+<script src="settings.js"></script>
 <script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));

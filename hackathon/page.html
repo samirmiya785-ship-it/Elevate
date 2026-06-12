@@ -40,7 +40,8 @@
   </ul>
 
   <div class="nav-actions">
-    <a href="counselling.html" class="btn primary-btn">Get Support</a>
+    <a href="profile.html#premium" class="btn premium-btn">Premium</a>
+    <button class="btn icon-btn" type="button" onclick="openSettings()" aria-label="Open settings">⚙</button>
   </div>
 </nav>
 
@@ -94,21 +95,16 @@
     </div>
   </div>
 
-  <div class="hero-visuals">
-    <div class="hero-visual-ring"></div>
-    <div class="hero-visual-ring hero-visual-ring-2"></div>
-    <div class="hero-center-icon">✊</div>
-
-    <div class="floating-card top-card">
-      <div class="card-label">Women in Nepal</div>
-      <div class="card-value">1 in 3</div>
-      <div class="card-sub">experience domestic violence</div>
-    </div>
-
-    <div class="floating-card bottom-card">
-      <div class="card-label">Change we drive</div>
-      <div class="card-value">500+</div>
-      <div class="card-sub">community members supported</div>
+  <div class="hero-visuals text-hero-visuals">
+    <div class="text-orbit">
+      <span class="orbit-word word-one">Speak up</span>
+      <span class="orbit-word word-two">Learn rights</span>
+      <span class="orbit-word word-three">Build support</span>
+      <span class="orbit-word word-four">Lead change</span>
+      <div class="text-core">
+        <h3>Equal voices. Shared power.</h3>
+        <p>Education, counselling, and community action working together for gender equality.</p>
+      </div>
     </div>
   </div>
 </header>
@@ -371,6 +367,7 @@
   </form>
 </div>
 
+<script src="settings.js"></script>
 <script>
   // Navbar scroll effect
   const navbar = document.getElementById('navbar');

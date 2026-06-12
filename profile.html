@@ -1,37 +1,121 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevate Profile</title>
+  <link rel="stylesheet" href="sty1.css">
 </head>
 <body>
-    <div class="profile"> 
-        <svg height="%" width="10%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
-  <path fill-rule="evenodd" d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Zm-5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM8 9c-1.825 0-3.422.977-4.295 2.437A5.49 5.49 0 0 0 8 13.5a5.49 5.49 0 0 0 4.294-2.063A4.997 4.997 0 0 0 8 9Z" clip-rule="evenodd" />
-</svg>
-<h1 font-size="2rem">
- Name🖉</h1>
+  <nav class="topbar">
+    <a class="brand" href="hackathon/page.html">
+      <span class="brand-mark">↑</span>
+      <span><strong>Elevate</strong><small>Close the Gaps</small></span>
+    </a>
+    <div class="top-actions">
+      <a class="premium-btn" href="hackathon/profile.html#premium">Premium</a>
+      <button class="icon-btn" type="button" onclick="toggleSettings()" aria-label="Open settings">⚙</button>
+    </div>
+  </nav>
 
-</div>
+  <main class="shell">
+    <section class="hero-card">
+      <div class="avatar-wrap">
+        <img id="profilePhotoPreview" class="avatar-image" alt="Profile photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='90' fill='%232f6fed'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' fill='white' font-family='Arial' font-size='56' font-weight='700'%3EAS%3C/text%3E%3C/svg%3E">
+        <label class="photo-upload" for="profilePhotoInput">Change photo</label>
+        <input id="profilePhotoInput" type="file" accept="image/*" hidden>
+      </div>
+      <div>
+        <p class="eyebrow">Your Journey</p>
+        <input id="profileNameInput" class="profile-name-input" type="text" value="Anita Shrestha" aria-label="Profile name">
+        <textarea id="profileBioInput" class="profile-bio-input" rows="3" aria-label="Profile bio">Active member from Kathmandu, learning gender rights, leadership, digital safety, and community advocacy.</textarea>
+        <div class="profile-meta-row">
+          <span>Active member from Kathmandu</span>
+          <span id="profileStoryCount">0 shared stories</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a class="primary-btn" href="hackathon/article.html">Share a Story</a>
+        <a class="small-btn" href="hackathon/counselling.html">Book Counselling</a>
+      </div>
+    </section>
 
-<h2 style="font-size: 26px;">General Settings ⚙️</h2>
+    <section class="panel wide">
+      <div class="panel-head">
+        <h2>Shared Stories</h2>
+        <a href="hackathon/article.html">Open articles</a>
+      </div>
+      <div id="profileStoriesFeed" class="story-feed"></div>
+    </section>
 
-<div class="box" >
+    <section class="grid">
+      <article class="panel">
+        <h2>Progress</h2>
+        <div class="stats">
+          <div><strong>3</strong><span>Courses</span></div>
+          <div><strong>12</strong><span>Articles</span></div>
+          <div><strong>5</strong><span>Sessions</span></div>
+        </div>
+      </article>
+      <article class="panel">
+        <h2>Premium Benefits</h2>
+        <ul class="clean-list">
+          <li>Priority mentor booking</li>
+          <li>Verified course certificates</li>
+          <li>Offline resource packs</li>
+          <li>Monthly leadership circles</li>
+        </ul>
+      </article>
+      <article class="panel wide">
+        <h2>General Settings</h2>
+        <div class="setting-row">
+          <span>Profile</span>
+          <a href="hackathon/profile.html">Open full dashboard</a>
+        </div>
+        <div class="setting-row">
+          <span>Theme</span>
+          <button class="small-btn" type="button" onclick="toggleTheme()">Toggle light/dark</button>
+        </div>
+        <div class="setting-row">
+          <span>Help and support</span>
+          <a href="hackathon/page.html#helplines">Emergency helplines</a>
+        </div>
+        <div class="setting-row">
+          <span>Privacy mode</span>
+          <label class="switch"><input type="checkbox"><i></i></label>
+        </div>
+      </article>
+    </section>
+  </main>
 
-    👤Profile </div>
-<div class="box">🔘Theme </div>
-<div class="box">💳Subscriptions </div>
-<div class="box">📋Help and Support </div>
-<div class="box">🏢About us </div>
-<div class="box">🔗Share with friends </div>
-<div class="box">👁️‍🗨️Privacy Policy </div>
-<div class="box">✖️Log out </div>
-<div class="profile">
+  <aside class="settings-drawer" id="settingsDrawer">
+    <button class="drawer-close" type="button" onclick="toggleSettings()">×</button>
+    <h2>Settings</h2>
+    <p>Quick access to your profile, theme, privacy, and support tools.</p>
+    <a href="hackathon/profile.html">Go to profile</a>
+    <button type="button" onclick="toggleTheme()">Change theme</button>
+    <a href="hackathon/classes.html">Browse classes</a>
+    <a href="hackathon/article.html">Share your story</a>
+  </aside>
 
+  <script src="hackathon/profile-data.js"></script>
+  <script>
+    initElevateProfilePage({
+      photoInputId: 'profilePhotoInput',
+      photoPreviewId: 'profilePhotoPreview',
+      nameInputId: 'profileNameInput',
+      bioInputId: 'profileBioInput',
+      feedId: 'profileStoriesFeed',
+      countId: 'profileStoryCount'
+    });
 
-  
-</div>
-<body>
-    
-</body>
+    function toggleSettings() {
+      document.getElementById('settingsDrawer').classList.toggle('open');
+    }
+    function toggleTheme() {
+      document.documentElement.dataset.theme =
+        document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+  </script>
 </body>
 </html>

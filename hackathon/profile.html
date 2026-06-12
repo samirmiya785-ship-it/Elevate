@@ -32,7 +32,8 @@
     <li><a href="profile.html" class="active">Profile</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="page.html" class="btn ghost-btn">← Back Home</a>
+    <a href="#premium" class="btn premium-btn">Premium</a>
+    <button class="btn icon-btn" type="button" onclick="openSettings()" aria-label="Open settings">⚙</button>
   </div>
 </nav>
 
@@ -44,6 +45,38 @@
     <p class="hero-sub">Track your learning, connect with mentors, and celebrate your growth. Every step forward matters.</p>
   </div>
 </main>
+
+<section class="profile-spotlight reveal">
+  <div class="profile-banner"></div>
+  <div class="profile-spotlight-content">
+    <div class="avatar-wrap">
+      <img id="profilePhotoPreview" class="avatar-image" alt="Profile photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='90' fill='%232f6fed'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' fill='white' font-family='Arial' font-size='56' font-weight='700'%3EAS%3C/text%3E%3C/svg%3E">
+      <label class="photo-upload" for="profilePhotoInput">Change photo</label>
+      <input id="profilePhotoInput" type="file" accept="image/*" hidden>
+    </div>
+    <div class="profile-spotlight-copy">
+      <p class="eyebrow">Your public profile</p>
+      <input id="profileNameInput" class="profile-name-input" type="text" value="Anita Shrestha" aria-label="Profile name">
+      <textarea id="profileBioInput" class="profile-bio-input" rows="3" aria-label="Profile bio">Active member from Kathmandu, learning gender rights, leadership, digital safety, and community advocacy.</textarea>
+      <div class="profile-meta-row">
+        <span>Active member from Kathmandu</span>
+        <span id="profileStoryCount">0 shared stories</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary-btn" href="article.html">Share a Story</a>
+        <a class="btn outline-btn" href="counselling.html">Book Counselling</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-stories-section reveal">
+  <div class="panel-head">
+    <h2>Shared Stories</h2>
+    <a href="article.html">Open articles</a>
+  </div>
+  <div id="profileStoriesFeed" class="story-feed"></div>
+</section>
 
 <!-- PROFILE SECTION -->
 <section class="profile-section">
@@ -176,6 +209,22 @@
   </div>
 
   <!-- Values Section -->
+  <div class="premium-section reveal" id="premium" style="max-width:1100px;margin:24px auto 0;">
+    <div class="premium-copy">
+      <span class="section-label">Premium</span>
+      <h2>Unlock deeper support</h2>
+      <p>Premium is designed for learners and advocates who want more guided help: certificates, priority mentor booking, downloadable resources, and monthly leadership circles.</p>
+    </div>
+    <div class="premium-benefits">
+      <div>Priority counselling</div>
+      <div>Verified certificates</div>
+      <div>Offline learning packs</div>
+      <div>Monthly mentor circle</div>
+    </div>
+    <a href="counselling.html" class="btn primary-btn">Start Premium</a>
+  </div>
+
+  <!-- Values Section -->
   <div class="values-section reveal" style="max-width:1100px;margin:24px auto 0;">
     <div class="values-header">
       <h2>Our Core Values</h2>
@@ -282,7 +331,18 @@
   </div>
 </footer>
 
+<script src="profile-data.js"></script>
+<script src="settings.js"></script>
 <script>
+  initElevateProfilePage({
+    photoInputId: 'profilePhotoInput',
+    photoPreviewId: 'profilePhotoPreview',
+    nameInputId: 'profileNameInput',
+    bioInputId: 'profileBioInput',
+    feedId: 'profileStoriesFeed',
+    countId: 'profileStoryCount'
+  });
+
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
 
