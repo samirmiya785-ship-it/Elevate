@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(47,111,237,0.16), transparent 30%),
+      radial-gradient(circle at 88% 12%, rgba(15,157,143,0.14), transparent 28%),
+      linear-gradient(180deg, #fff8f6, #f4fbf8);
+    color: #17202a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background: linear-gradient(135deg, #2f6fed 0%, #0f9d8f 100%);
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.82);
+}
+
+/* --- Grid Container Configuration --- */
+.container {
+    max-width: 1100px; /* Fixed the extra zero typo here */
+    width: 90%;
+    margin: 3rem 0;
+    display: grid;
+    /* Explicitly sets up 2 equal columns and 3 equal rows */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, auto);
+    gap: 2rem;
+}
+
+/* --- Law Card Layout --- */
+.law-card {
+    width: 100%; 
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: visible; 
+    transition: transform 0.2s ease;
+    border: 1px solid #e2e8f0;
+    align-self: start; 
+}
+
+/* If you have a 5th card that you still want centered on the 3rd row, 
+   this keeps it perfectly aligned in the middle of the 3rd row.
+*/
+.full-row-footer {
+    grid-column: 1 / -1;       /* Spans across both columns */
+    justify-self: center;     /* Centers the block within that row width */
+    width: calc(50% - 1rem);  /* Matches the exact width of a single card item */
+}
+
+.law-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* The Main Law Button/Header */
+.main-law-btn {
+    background: linear-gradient(135deg, #2f6fed 0%, #0f9d8f 100%);
+    color: white;
+    padding: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: block;
+    box-sizing: border-box;
+}
+
+.law-card:hover .main-law-btn {
+    background: linear-gradient(135deg, #0f9d8f 0%, #54bed0 100%);
+}
+
+/* Sub-laws Container (Hidden by default) */
+.sub-laws-container {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s;
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Trigger: Hover actions */
+.law-card:hover .sub-laws-container {
+    max-height: 600px; 
+    opacity: 1;
+    visibility: visible;
+    border-top: 2px solid #2f6fed;
+}
+
+/* Individual Sub-law Styling */
+.sub-law-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.sub-law-item:last-child {
+    border-bottom: none;
+}
+
+.sub-law-item strong {
+    display: block;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+.sub-law-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Responsive adjustment for tablets or mobile screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Switch to 1 column on mobile devices */
+        grid-template-rows: auto;   /* Resets fixed rows for mobile stacking */
+    }
+    .full-row-footer {
+        grid-column: auto;
+        width: 100%; /* Spans full width on mobile viewports */
+    }
+}
+
+.navbar {
+    width: 100%;
+    align-self: stretch;
+}
+
+.logo {
+    color: inherit;
+}
+
+.btn {
+    text-decoration: none;
+}
