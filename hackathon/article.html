@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article Creator & Dashboard</title>
+    <link rel="stylesheet" href="article.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+            <!-- Background circle -->
+            <circle cx="50" cy="50" r="48" fill="url(#logoGradient)" />
+            <!-- Arrow pointing up (growth symbol) -->
+            <path d="M 50 25 L 65 45 L 57 45 L 57 65 L 43 65 L 43 45 L 35 45 Z" fill="white" />
+            <!-- Decorative circles -->
+            <circle cx="25" cy="70" r="4" fill="rgba(255,255,255,0.7)" />
+            <circle cx="75" cy="70" r="4" fill="rgba(255,255,255,0.7)" />
+            <defs>
+              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color: #e27b6e; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: #a074a8; stop-opacity: 1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h2>Elevate</h2>
+          <p class="tagline">Close the Gaps</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-container">
+      <section class="form-section">
+        <h2>Create a New Article</h2>
+        <form id="articleForm">
+          <div class="form-group">
+            <label for="title">Article Title</label>
+            <input type="text" id="title" placeholder="Enter a catchy title..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="content">Article Content</label>
+            <textarea id="content" rows="8" placeholder="Write your story here..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="file-label">Upload Photos</label>
+            <input type="file" id="photos" accept="image/*" multiple />
+          </div>
+
+          <div class="form-group">
+            <label class="file-label">Upload Videos</label>
+            <input type="file" id="videos" accept="video/*" multiple />
+          </div>
+
+          <button type="submit" class="submit-btn">Publish Article</button>
+        </form>
+      </section>
+
+      <section class="feed-section">
+        <h2>Published Articles</h2>
+        <div id="articlesDisplay" class="articles-grid">
+          <p class="no-articles">No articles published yet. Use the form to create one!</p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById("articleForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const title = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+        const photoFiles = document.getElementById("photos").files;
+        const videoFiles = document.getElementById("videos").files;
+
+        // Remove the "No articles published yet" text on first submission
+        const fallbackMsg = document.querySelector(".no-articles");
+        if (fallbackMsg) fallbackMsg.remove();
+
+        // Create article card element
+        const card = document.createElement("article");
+        card.className = "article-card";
+
+        // Add Text Elements
+        let mediaHTML = "";
+
+        // Handle Photo Previews
+        if (photoFiles.length > 0) {
+          mediaHTML += '<div class="media-gallery">';
+          for (let i = 0; i < photoFiles.length; i++) {
+            const imgUrl = URL.createObjectURL(photoFiles[i]);
+            mediaHTML += `<img src="${imgUrl}" alt="Article Image">`;
+          }
+          mediaHTML += "</div>";
+        }
+
+        // Handle Video Previews
+        if (videoFiles.length > 0) {
+          mediaHTML += '<div class="media-gallery">';
+          for (let i = 0; i < videoFiles.length; i++) {
+            const videoUrl = URL.createObjectURL(videoFiles[i]);
+            mediaHTML += `<video src="${videoUrl}" controls></video>`;
+          }
+          mediaHTML += "</div>";
+        }
+
+        // Inject structural content into card
+        card.innerHTML = `
+                <div class="card-content">
+                    <h3>${title}</h3>
+                    <p class="publish-date">Published Just Now</p>
+                    <p class="body-text">${content.replace(/\n/g, "<br>")}</p>
+                </div>
+                ${mediaHTML}
+            `;
+
+        // Prepend new card to the top of the feed grid
+        const displayArea = document.getElementById("articlesDisplay");
+        displayArea.insertBefore(card, displayArea.firstChild);
+
+        // Reset Form Fields after posting
+        document.getElementById("articleForm").reset();
+      });
+    </script>
+  </body>
+</html>

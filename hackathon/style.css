@@ -59,13 +59,13 @@ body {
 }
 
 .logo-icon::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transform: rotate(45deg);
   animation: shine 3s infinite;
 }
@@ -82,7 +82,7 @@ body {
 .logo-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .logo-icon:hover {
@@ -271,7 +271,9 @@ body {
   font-size: 1.05rem;
   line-height: 1.65;
   margin-bottom: 35px;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .hero h1,
@@ -280,7 +282,10 @@ body {
 .btn,
 .badge,
 .bottom-buttons-row .btn {
-  transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .hero h1:hover,
@@ -477,7 +482,6 @@ body {
   }
 }
 
-
 /* Main Hero Button Container (Articles & Posts) */
 .cta-group {
   display: flex;
@@ -500,7 +504,7 @@ body {
   background: white;
   padding: 18px 20px;
   border-radius: 22px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
 .stat-icon {
@@ -879,7 +883,10 @@ body {
   border: 1px solid rgba(240, 124, 96, 0.16);
   text-decoration: none;
   box-shadow: 0 14px 30px rgba(240, 124, 96, 0.08);
-  transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    background-color 0.25s;
 }
 
 .topic-pill:hover {
@@ -900,7 +907,9 @@ body {
   box-shadow: 0 20px 45px rgba(240, 124, 96, 0.25);
   cursor: pointer;
   z-index: 210;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .chat-bubble:hover {
@@ -1045,7 +1054,9 @@ body {
   border-radius: 24px;
   padding: 28px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .feature-card:hover {
@@ -1613,7 +1624,7 @@ body {
 #helpline-info {
   display: none;
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 22%;
   padding-top: 10px;
   width: 250px;
